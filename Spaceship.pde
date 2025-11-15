@@ -3,7 +3,7 @@ public class Spaceship extends Floater
   public Spaceship()
   {
     corners = 4;
- 
+  
     xCorners = new int[]{20, -10, -5, -10};
     yCorners = new int[]{0, 10, 0, -10};
 
