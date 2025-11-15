@@ -1,30 +1,45 @@
-class Spaceship extends Floater {
-
-  public Spaceship() {
+public class Spaceship extends Floater
+{
+  public Spaceship()
+  {
     corners = 4;
-    xCorners = new float[corners];
-    yCorners = new float[corners];
-    xCorners[0] = 20;   yCorners[0] = 0;  
-    xCorners[1] = -10;  yCorners[1] = -10;
-    xCorners[2] = -5;   yCorners[2] = 0;  
-    xCorners[3] = -10;  yCorners[3] = 10;  
+
+    xCorners = new int[]{20, -10, -5, -10};
+    yCorners = new int[]{0, 10, 0, -10};
+
     myColor = color(255, 255, 255);
+    myCenterX = width / 2;
+    myCenterY = height / 2;
 
-    myCenterX = width / 2.0f;
-    myCenterY = height / 2.0f;
+    myXspeed = 0;
+    myYspeed = 0;
 
-    myDirectionX = 0.0f;
-    myDirectionY = 0.0f;
-
-    myPointDirection = 0.0f;
+    myPointDirection = 0;
   }
-  public void hyperspace() {
-    myDirectionX = 0.0f;
-    myDirectionY = 0.0f;
 
-    myCenterX = (float)(Math.random() * width);
-    myCenterY = (float)(Math.random() * height);
+  public void turnLeft()
+  {
+    turn(-5);
+  }
 
-    myPointDirection = (float)(Math.random() * 360.0);
+  public void turnRight()
+  {
+    turn(5);
+  }
+
+  public void accelerate()
+  {
+    accelerate(0.2);
+  }
+
+  public void hyperspace()
+  {
+    myCenterX = Math.random() * width;
+    myCenterY = Math.random() * height;
+
+    myXspeed = 0;
+    myYspeed = 0;
+
+    myPointDirection = Math.random() * 360;
   }
 }
