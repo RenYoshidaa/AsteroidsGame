@@ -1,6 +1,6 @@
 Spaceship ship;
 Star[] stars;
- 
+  
 void setup()
 {
   size(800, 600);
