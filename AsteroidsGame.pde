@@ -1,21 +1,25 @@
 Spaceship ship;
 Star[] stars;
 
-void setup() {
+void setup()
+{
   size(800, 600);
+
   ship = new Spaceship();
 
-  stars = new Star[120];
-  for (int i = 0; i < stars.length; i++) {
+  stars = new Star[150];
+  for (int i = 0; i < stars.length; i++)
+  {
     stars[i] = new Star();
   }
 }
 
-void draw() {
+void draw()
+{
   background(0);
 
-  // draw stars
-  for (int i = 0; i < stars.length; i++) {
+  for (int i = 0; i < stars.length; i++)
+  {
     stars[i].show();
   }
 
@@ -23,17 +27,22 @@ void draw() {
   ship.show();
 }
 
-void keyPressed() {
-  if (key == 'a' || key == 'A') {
+void keyPressed()
+{
+  if (key == 'a')
+  {
     ship.turnLeft();
   }
-  if (key == 'd' || key == 'D') {
+  if (key == 'd')
+  {
     ship.turnRight();
   }
-  if (key == 'w' || key == 'W') {
-    ship.accelerate(0.2);
+  if (key == 'w')
+  {
+    ship.accelerate();
   }
-  if (key == 'h' || key == 'H') {
+  if (key == 'h')
+  {
     ship.hyperspace();
   }
 }
