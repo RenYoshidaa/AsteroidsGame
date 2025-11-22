@@ -1,3 +1,4 @@
+
 public class Spaceship extends Floater
 {
   public Spaceship()
@@ -19,12 +20,12 @@ public class Spaceship extends Floater
 
   public void turnLeft()
   {
-    turn(-5);
+    turn(-15);
   }
 
   public void turnRight()
   {
-    turn(5);
+    turn(15);
   }
 
   public void accelerate()
