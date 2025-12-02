@@ -30,7 +30,7 @@ public class Spaceship extends Floater
 
   public void accelerate()
   {
-    accelerate(0.2);
+    super.accelerate(0.2);
   }
 
   public void hyperspace()
