@@ -3,7 +3,7 @@ public class Asteroid extends Floater {
 
   public Asteroid() {
     corners = 6;
-
+ 
     xCorners = new int[]{20, 10, -10, -20, -10, 10};
     yCorners = new int[]{0, 20, 15, 0, -15, -20};
 
