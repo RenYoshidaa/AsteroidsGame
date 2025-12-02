@@ -37,8 +37,12 @@ void draw()
   {
     Asteroid a = asteroids.get(i);
 
-    float d = dist((float)ship.myCenterX, (float)ship.myCenterY,
-                   (float)a.getX(), (float)a.getY());
+    float sx = (float) ship.getX();
+float sy = (float) ship.getY();
+float ax = (float) a.getX();
+float ay = (float) a.getY();
+
+float d = dist(sx, sy, ax, ay);
 
     if (d < 20)
     {
