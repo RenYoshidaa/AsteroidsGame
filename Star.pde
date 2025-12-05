@@ -7,7 +7,6 @@ public class Star {
   public Star() {
     x = (float)(Math.random() * width);
     y = (float)(Math.random() * height);
-
     size = (float)(Math.random() * 3 + 2);
     brightness = (float)(Math.random() * 255);
   }
