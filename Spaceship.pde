@@ -1,4 +1,5 @@
 public class Spaceship extends Floater {
+
   public Spaceship() {
     corners = 4;
 
@@ -14,13 +15,8 @@ public class Spaceship extends Floater {
     myPointDirection = 0;
   }
 
-  public void turnLeft() {
-    turn(-15);
-  }
-
-  public void turnRight() {
-    turn(15);
-  }
+  public void turnLeft() { turn(-25); }
+  public void turnRight() { turn(25); }
 
   public void accelerate() {
     super.accelerate(0.2);
@@ -29,15 +25,15 @@ public class Spaceship extends Floater {
   public void hyperspace() {
     myCenterX = Math.random() * width;
     myCenterY = Math.random() * height;
-
     myXspeed = 0;
     myYspeed = 0;
-
     myPointDirection = Math.random() * 360;
   }
 
   public double getX() { return myCenterX; }
   public double getY() { return myCenterY; }
-
+  public double getPointDirection() { return myPointDirection; }
+  public double getXspeed() { return myXspeed; }
+  public double getYspeed() { return myYspeed; }
   public double getRadius() { return 20; }
 }
