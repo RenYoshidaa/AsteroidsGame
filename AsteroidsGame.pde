@@ -1,6 +1,7 @@
 Spaceship ship;
 Star[] stars;
 ArrayList<Asteroid> asteroids;
+ArrayList<Bullet> bullets;
 
 void setup() {
   size(800, 600);
@@ -16,6 +17,8 @@ void setup() {
   for (int i = 0; i < 12; i++) {
     asteroids.add(new Asteroid());
   }
+
+  bullets = new ArrayList<Bullet>();
 }
 
 void draw() {
@@ -37,13 +40,42 @@ void draw() {
     float ay = (float) a.getY();
 
     float d = dist(sx, sy, ax, ay);
-
     if (d < ship.getRadius() + a.getRadius()) {
       asteroids.remove(i);
       i--;
     } else {
       a.move();
       a.show();
+    }
+  }
+
+  for (int i = 0; i < bullets.size(); i++) {
+    Bullet b = bullets.get(i);
+
+    if (b.getX() < 0 || b.getX() > width || b.getY() < 0 || b.getY() > height) {
+      bullets.remove(i);
+      i--;
+    } else {
+      b.move();
+      b.show();
+    }
+  }
+
+  for (int i = 0; i < bullets.size(); i++) {
+    Bullet b = bullets.get(i);
+
+    for (int j = 0; j < asteroids.size(); j++) {
+      Asteroid a = asteroids.get(j);
+
+      float d = dist((float)b.getX(), (float)b.getY(),
+                     (float)a.getX(), (float)a.getY());
+
+      if (d < b.getRadius() + a.getRadius()) {
+        asteroids.remove(j);
+        bullets.remove(i);
+        i--;
+        break;
+      }
     }
   }
 }
@@ -53,4 +85,5 @@ void keyPressed() {
   if (key == 'd') ship.turnRight();
   if (key == 'w') ship.accelerate();
   if (key == 'h') ship.hyperspace();
+  if (key == ' ') bullets.add(new Bullet(ship));
 }
