@@ -1,6 +1,6 @@
 public class Bullet extends Floater {
   private double radius;
-
+ 
   public Bullet(Spaceship theShip) {
     myCenterX = theShip.getX();
     myCenterY = theShip.getY();
